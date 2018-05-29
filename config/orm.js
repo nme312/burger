@@ -8,6 +8,7 @@ var orm = {
             for (var i = 0; i < data.length; i++) {
                 console.log(data[i]);
             }
+            cb(data);
         });
     },
 
@@ -16,6 +17,7 @@ var orm = {
         connection.query(queryString, [targetTable, name, devoured], function (err, data) {
             if (err) throw (err);
         });
+        cb(data);
     },
 
     updateOne: function (targetTable, name, devoured, id) {
@@ -23,6 +25,7 @@ var orm = {
         connection.query(queryString, [targetTable, name, devoured, id], function (err, data) {
             if (err) throw (err);
         });
+        cb(data);
     }
 }
 

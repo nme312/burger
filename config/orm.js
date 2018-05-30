@@ -1,7 +1,7 @@
 var connection = require("./connection");
 
 var orm = {
-    selectAll: function (targetTable) {
+    selectAll: function (targetTable, cb) {
         var queryString = "SELECT * FROM ??";
         connection.query(queryString, targetTable, function (err, data) {
             if (err) throw (err);
@@ -9,23 +9,24 @@ var orm = {
                 console.log(data[i]);
             }
             cb(data);
+            // console.log(cb(data));
         });
     },
 
-    insertOne: function (targetTable, name, devoured) {
+    insertOne: function (targetTable, name, devoured, cb) {
         var queryString = "INSERT INTO ?? (burger_name, devoured) VALUES (?, ?)";
         connection.query(queryString, [targetTable, name, devoured], function (err, data) {
             if (err) throw (err);
+            cb(data);
         });
-        cb(data);
     },
 
-    updateOne: function (targetTable, name, devoured, id) {
+    updateOne: function (targetTable, name, devoured, id, cb) {
         var queryString = "UPDATE ?? SET burger_name = ?, devoured = ? WHERE id = ?";
         connection.query(queryString, [targetTable, name, devoured, id], function (err, data) {
             if (err) throw (err);
+            cb(data);
         });
-        cb(data);
     }
 }
 

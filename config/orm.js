@@ -9,7 +9,6 @@ var orm = {
                 console.log(data[i]);
             }
             cb(data);
-            // console.log(cb(data));
         });
     },
 

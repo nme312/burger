@@ -1,25 +1,27 @@
-<div class="row">
-    <div class="col-md-12">
-        <div class="burger-list">
-            {{#each burgers}}
-            <div class="burger" data-devoured="false">
-                <h5>{{this.id}}.) {{this.burger_name}}</h5>
-                <button type="button" class=" btn-outline-primary mb-3">Devour</button>
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="burger-list">
+                {{#each burgers}}
+                <div class="burger" data-devoured="false">
+                    <h5>{{this.id}}.) {{this.burger_name}}</h5>
+                    <button type="button" class=" btn-outline-primary mb-3" id="devour-button">Devour</button>
+                </div>
+                {{/each}}
             </div>
-            {{/each}}
         </div>
     </div>
-</div>
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="burger-entry">
-            {{!-- action="/insert" method="POST" --}}
-            <form id="add-burger-form">
-                <input type="text" id="new-burger" name="burger-name" placeholder="New Burger">
-                <button type="submit" class="add-burger-button btn-outline-primary">Add The Burger</button>
-            </form>
-            
+    <div class="row">
+        <div class="col-md-12">
+            <div class="burger-entry">
+                <form action="/insert" method="POST" id="add-burger-form">
+                    <input type="text" id="new-burger" name="burger-name" placeholder="New Burger">
+                    <button type="submit" class="add-burger-button btn-outline-primary">Add The Burger</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

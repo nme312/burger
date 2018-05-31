@@ -18,7 +18,7 @@ router.post("/insert", function (req, res) {
     });
 });
 
-router.post("/update", function (req, res) {
+router.put("/update", function (req, res) {
     burger.updateOne("burger", req.body.burger_name, req.body.devoured, req.body.id, function (data) {
         
     });

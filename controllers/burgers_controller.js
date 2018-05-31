@@ -18,9 +18,9 @@ router.post("/insert", function (req, res) {
     });
 });
 
-router.put("/update", function (req, res) {
-    burger.updateOne("burger", req.body.burger_name, req.body.devoured, req.body.id, function (data) {
-        
+router.put("/update/:id", function (req, res) {
+    burger.updateOne("burger", req.body.devoured, req.body.id, function (data) {
+        req.body.devoured = 1;
     });
 });
 

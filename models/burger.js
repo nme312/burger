@@ -17,7 +17,7 @@ var burger = {
     },
 
     updateOne: function(targetTable, name, devoured, id, cb) {
-        orm.updateOne(targetTable, name, devoured, id, cb);
+        orm.updateOne(targetTable, devoured, id, cb);
     }
 }
 

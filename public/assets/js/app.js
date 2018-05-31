@@ -3,8 +3,12 @@ $(document).ready(function () {
 
     $("#devour-button").on("click", function (event) {
         event.preventDefault();
-        
-    })
+        var id = $(this).data("burger-id");
+        $.ajax({
+            url: "/update/" + id,
+            method: "PUT",
+        }).then(response => location.reload());
+    });
 
     $(".add-burger-button").on("click", function (event) {
         event.preventDefault();

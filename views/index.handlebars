@@ -2,20 +2,30 @@
 
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="burger-list">
-                {{#each burgers}}
+                {{#each burgers}} {{#unless this.devoured}}
                 <div class="burger" data-devoured="false">
                     <h5>{{this.id}}.) {{this.burger_name}}</h5>
-                    <button type="button" class=" btn-outline-primary mb-3" id="devour-button">Devour</button>
+                    <button type="button" data-burger-id="{{this.id}}" class=" btn-outline-primary mb-3" id="devour-button">Devour</button>
                 </div>
-                {{/each}}
+                {{/unless}} {{/each}}
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="burger-list">
+                {{#each burgers}} {{#if this.devoured}}
+                <div class="devoured-burger">
+                    <h5>{{this.id}}.) {{this.burger_name}}</h5>
+                </div>
+                {{/if}} {{/each}}
             </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 centered">
             <div class="burger-entry">
                 <form action="/insert" method="POST" id="add-burger-form">
                     <input type="text" id="new-burger" name="burger-name" placeholder="New Burger">

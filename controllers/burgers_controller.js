@@ -19,8 +19,8 @@ router.post("/insert", function (req, res) {
 });
 
 router.put("/update/:id", function (req, res) {
-    burger.updateOne("burger", req.body.devoured, req.body.id, function (data) {
-        req.body.devoured = 1;
+    burger.updateOne(1, req.params.id, function (data) {
+        res.status(200).end();
     });
 });
 

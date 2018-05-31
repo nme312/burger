@@ -16,8 +16,8 @@ var burger = {
         orm.insertOne(targetTable, name, devoured, cb);
     },
 
-    updateOne: function(targetTable, name, devoured, id, cb) {
-        orm.updateOne(targetTable, devoured, id, cb);
+    updateOne: function (devoured, id, cb) {
+        orm.updateOne("burgers", devoured, id, cb);
     }
 }
 

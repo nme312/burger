@@ -12,8 +12,12 @@ var burger = {
         orm.selectAll("burgers", cb);
     },
 
-    insertOne: function (tableName, name, devoured, cb) {
-        orm.insertOne(tableName, name, devoured, cb);
+    insertOne: function (targetTable, name, devoured, cb) {
+        orm.insertOne(targetTable, name, devoured, cb);
+    },
+
+    updateOne: function(targetTable, name, devoured, id, cb) {
+        orm.updateOne(targetTable, name, devoured, id, cb);
     }
 }
 

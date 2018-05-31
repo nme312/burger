@@ -14,10 +14,12 @@
 <div class="row">
     <div class="col-md-12">
         <div class="burger-entry">
-            <form action="/burgers" method="POST">
+            {{!-- action="/insert" method="POST" --}}
+            <form id="add-burger-form">
                 <input type="text" id="new-burger" name="burger-name" placeholder="New Burger">
-                <button type="submit" class="addBurgerButton btn-outline-primary">Add The Burger</button>
+                <button type="submit" class="add-burger-button btn-outline-primary">Add The Burger</button>
             </form>
+            
         </div>
     </div>
 </div>

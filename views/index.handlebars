@@ -2,9 +2,22 @@
     <div class="col-md-12">
         <div class="burger-list">
             {{#each burgers}}
-                <p>{{burger_name}}</p>
-                <button>Devour</button>
+            <div class="burger" data-devoured="false">
+                <h5>{{this.id}}.) {{this.burger_name}}</h5>
+                <button type="button" class=" btn-outline-primary mb-3">Devour</button>
+            </div>
             {{/each}}
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="burger-entry">
+            <form action="/burgers" method="POST">
+                <input type="text" id="new-burger" name="burger-name" placeholder="New Burger">
+                <button type="submit" class="addBurgerButton btn-outline-primary">Add The Burger</button>
+            </form>
         </div>
     </div>
 </div>

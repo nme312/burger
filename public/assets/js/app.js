@@ -11,7 +11,7 @@ $(document).ready(function () {
         }).then(response => location.reload());
     });
 
-    $("#devour-button").on("click", function (event) {
+    $(".devour-button").on("click", function (event) {
         event.preventDefault();
         var id = $(this).data("burger-id");
         console.log(id);
